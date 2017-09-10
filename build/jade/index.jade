@@ -12,48 +12,79 @@ html(lang="en")
 	body
 		header
 			nav
-				a
-					img(src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="go-back")
+				//a
+					//img(src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="go-back")
 				ul
 					each item in ['01', '02', '03', '04', '05']
 						li.hover-sound-beep= item
+						
+			div.header-image
 				div.header-titles
-					h1.parallax-pos-150 Exoplanets
-					div.title-divider.parallax-neg-150		
+					h1.parallax-pos-150 Exoplanetss
 					h2.parallax-pos-150 Where life might be lurking #[br] in the galaxy	
-			div.planet
+			//div.planet
 					
 		div.bg-stars-animation
 		div.fov
 		div.grid.grid-parallax
 		
+		div.space-navigation
+			div.line
+		
 		section
 			article
-			
-				p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
-				p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
+				div.flex-60
+					div.exoplanet-one					
 				
-				div.test
+				div.flex-40
+					h3 Part 01
+					h1 What is an exoplanet?
+					
+					p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
+					p With so many other stars out there, they began searching the neighborhoods around those stars for planets like Earth. Could there be an Earth-like planet orbiting some other star with all the perfect conditions to support life? Maybe!
+					p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
 				
-				div.timeline-window
-					div.timeline-content
-						h2 Kelper-186f					
-						p Kepler-186f (also known by its Kepler Object of Interest designation KOI-571.05) is an exoplanet orbiting the red dwarf Kepler-186, about 500 light-years (nearly 5.298×1015 km) from the Earth. It is the first planet with a radius similar to Earth's to be discovered in the habitable zone of another star. NASA's Kepler spacecraft detected it using the transit method, along with four additional planets orbiting much closer to the star (all modestly larger than Earth). Analysis of three years of data was required to find its signal.
-						p It is the first planet with a radius similar to Earth's to be discovered in the habitable zone of another star. NASA's Kepler spacecraft detected it using the transit method, along with four additional planets orbiting much closer to the star (all modestly larger than Earth). Analysis of three years of data was required to find its signal.
-			
-						div.planet-timeline
-							div.timeline-icons
-								div.planet-icon
-								div.select
-							div.timeline-icons
-								div.planet-icon
-								div.select
-							div.timeline-icons
-								div.planet-icon
-								div.select
-							div.timeline-icons
-								div.planet-icon
-								div.select
+				div.flex-40
+					h3 Part 02
+					h1 What do we know
+					
+					p Scientists have learned that other solar systems share similarities with our own solar system. For example, they've learned that exoplanets can orbit their stars at different distances. Some exoplanets are so close to their stars that they have surface temperatures that could melt iron.
+					p Other exoplanets might orbit at just the right distance that they fall in their star's habitable zone, which is the zone in which an exoplanet would enjoy temperatures that would permit liquid water to exist at its surface. The existence of liquid water at the surface is one of the key factors scientists believe would permit life to form.
+
+				
+				div.flex-60
+					div.melting-planet					
+					
+				div.flex-60
+					
+					
+				div.flex-40
+					h3 Part 03
+					h1 How many exoplanets are there?
+					
+					p Exoplanets are now a dime a dozen. Before 1995 it was unknown whether or not other main sequence stars even hosted their own planets, but now we know that, statistically, almost every star in the galaxy is likely to have at least one planet, and many even have multiple.
+					p Thanks to missions like Kepler we now have 3400 confirmed exoplanets and another 5400 waiting to be officially added to the list. Many of these are gas giants like Jupiter and Saturn, some are Neptune like and covered in ice, but there are a few that are rocky like our home.
+				
+				div.flex-60.wide
+					h3 Part 04
+					h1 Any habitable exoplanets?
+					
+					p Of the 3400 confirmed exoplanets, there are only around 15 that fall into the category of ‘habitable’ and out of those 15, there are five that SETI astronomer Jeff Coughlin thinks are the most interesting.
+					p Coughlin talked to us about his guidelines for what’s really considered “habitable” and what’s not. A lot of what makes a planet habitable falls into a few categories: its size, its distance from its host star, and exactly what kind of star it orbits around. What we think of as a habitable world isn’t always the same marker for scientists.
+					p “When the everyday person hears the word habitable they probably think something like Earth or (a place) humans could walk out of a spaceship and be happy: there’s water, an atmosphere, gravity wouldn’t be too high, the temperature wouldn’t be too hot or too cold,” Coughlin explains. “But when astronomers talk about habitable worlds we’re really just asking about two things: could there be liquid water on what is a mostly rocky surface, nothing like Jupiter where you have a huge atmosphere crushing you down-those are really the two terms that astronomers think about. When we say a planet is habitable, that’s all we really mean.”
+					p Let’s take a tour through the four most habitable exoplanets that we know of so far.
+
+					
+				div.flex-40
+				
+				
+				
+				h1 habitable exoplanets
+					
+				//p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
+				// p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
+				
+
 		
 		footer
 			h4.logo Unoccupied magazine

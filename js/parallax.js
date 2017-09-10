@@ -14,5 +14,7 @@ $(document).mousemove(function (e) {
     $('.grid-parallax').parallax(-150, e);
     $('.parallax-pos-150').parallax(150, e);
     $('.parallax-neg-150').parallax(-150, e);
+    $('.flex-40').parallax(-150, e);
+    $('.flex-60').parallax(150, e);
     $('footer').parallax(0, e);
 })

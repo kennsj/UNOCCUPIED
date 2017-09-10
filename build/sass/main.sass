@@ -1,3 +1,5 @@
+$UO-red: #EB4B48;
+
 *
     box-sizing: border-box
     margin: 0
@@ -22,18 +24,6 @@ header
     flex-direction: column
     align-items: center
     justify-content: center
-
-    h1
-        font-family: 'Ropa Sans'
-        font-weight: 900
-        font-size: 7rem
-        text-align: center
-
-    .title-divider
-        width: 100px
-        height: 5px
-        background-color: white
-        margin: 3em auto
 
     nav
         position: fixed
@@ -71,6 +61,22 @@ header
             margin-top: 25px
             margin-left: 3vw
 
+    .header-image
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100vw
+        height: 100vh
+        background: url(../img/header-bg.png) no-repeat
+        background-size: cover
+
+
+        h1
+            font-family: 'Ropa Sans'
+            font-weight: 900
+            font-size: 7rem
+            text-align: center
+            color: white
 
 .fov
     width: 100vw
@@ -96,6 +102,20 @@ header
     padding: 0 15vw
     background-size: 10vw 20vh
     background-image: radial-gradient(circle, rgba(255, 255, 255, .3) 2px, rgba(44, 44, 44, 0) 1px)
+
+.space-navigation
+    display: flex
+    width: 100vw
+    justify-content: center
+    position: absolute
+    z-index: 5
+
+    .line
+        margin: 0 auto
+        width: 1px
+        background-color: white
+        height: 300vh
+        opacity: .2
 
 .planet
     position: absolute
@@ -129,38 +149,68 @@ h2
 
 section
     position: absolute
-    width: 70vw
-    margin: 0 15vw
+    width: 100vw
 
     article
-        padding: 0 10vw
+        display: flex
+        flex-wrap: wrap
+        flex-direction: row
+
+        h1
+            font-family: 'Ropa Sans'
+            font-size: 50px
+
+        h2
+            font-family: 'Ropa Sans'
+            font-size: 25px
+
+        h3
+            font-family: 'Ropa Sans'
+            font-size: 16px
+            font-weight: 100
+            color: $UO-red
 
         p
             font-family: 'Open Sans'
-            font-size: 20px
-            line-height: 40px
+            font-size: 18px
+            line-height: 32px
             font-weight: 100
             margin-bottom: 40px
             padding: 0 5vw
 
-        .test
-            width: 100vh
-            height: 60vh
-            margin-top: 5vh
-            background: url(https://www.iau.org/static/archives/images/large/iau1301a.jpg) no-repeat
+        p:first-of-type
+            padding-top: 50px
+
+        .flex-60
+            flex-basis: 60%
+            height: 100vh
+
+        .wide
+            padding: 10% 5vw
+
+        .flex-40
+            flex-basis: 40%
+            height: 100vh
+            padding: 10% 50px
+
+        .exoplanet-one
+            width: 100%
+            height: 100%
+            background: url(../img/exoplanet01.jpg) no-repeat
             background-size: cover
-            background-position: center
-            opacity: .8
+
+        .melting-planet
+            width: 100%
+            height: 100%
+            background: url(../img/melting-planet.jpg) no-repeat
+            background-size: cover
+            background-position: top
 
     .timeline-window
-        position: absolute
-        width: 100%
         height: auto
         margin-top: 10vh
 
         .timeline-content
-            width: 80%
-            padding: 50px
 
         .planet-timeline
             display: flex
@@ -224,7 +274,7 @@ footer
     justify-content: space-between
     height: 5vh
     width: 100vw
-    padding: 0 30vw
+    padding: 0 15vw
 
     .logo
         font-size: 16px
