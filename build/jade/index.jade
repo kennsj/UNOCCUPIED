@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+	head
+		title= UNOCCUPIED
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+		link(rel="icon" href="")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:400,700,900")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ropa+Sans")
+		link(rel="stylesheet" href="css/main.css")
+		
+	body
+		header
+			nav
+				a
+					img(src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="go-back")
+				ul
+					each item in ['01', '02', '03', '04', '05']
+						li.hover-sound-beep= item
+				div.header-titles
+					h1.parallax-pos-150 Exoplanets
+					div.title-divider.parallax-neg-150		
+					h2.parallax-pos-150 Where life might be lurking #[br] in the galaxy	
+			div.planet
+					
+		div.bg-stars-animation
+		div.fov
+		div.grid.grid-parallax
+		
+		section
+			article
+			
+				p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
+				p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
+				
+				div.test
+				
+				div.timeline-window
+					div.timeline-content
+						h2 Kelper-186f					
+						p Kepler-186f (also known by its Kepler Object of Interest designation KOI-571.05) is an exoplanet orbiting the red dwarf Kepler-186, about 500 light-years (nearly 5.298×1015 km) from the Earth. It is the first planet with a radius similar to Earth's to be discovered in the habitable zone of another star. NASA's Kepler spacecraft detected it using the transit method, along with four additional planets orbiting much closer to the star (all modestly larger than Earth). Analysis of three years of data was required to find its signal.
+						p It is the first planet with a radius similar to Earth's to be discovered in the habitable zone of another star. NASA's Kepler spacecraft detected it using the transit method, along with four additional planets orbiting much closer to the star (all modestly larger than Earth). Analysis of three years of data was required to find its signal.
+			
+						div.planet-timeline
+							div.timeline-icons
+								div.planet-icon
+								div.select
+							div.timeline-icons
+								div.planet-icon
+								div.select
+							div.timeline-icons
+								div.planet-icon
+								div.select
+							div.timeline-icons
+								div.planet-icon
+								div.select
+		
+		footer
+			h4.logo Unoccupied magazine
+			div.audio-icon.hover-sound-beep
+			
+		audio(src="sound/beep.mp3")#beep-sound
+		// source(src="sound/beep.mp3")
+		
+		
+		script(type="text/javascript" src="js/jquery-latest.min.js")
+		script(type="text/javascript" src="js/parallax.js")
+		script(type="text/javascript" src="js/TweenMax.js")
+		script(type="text/javascript" src="js/velocity.js")
+		script(type="text/javascript" src="js/main.js")
