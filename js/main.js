@@ -1,33 +1,32 @@
 // Animations
-
-/*$('.test').velocity({
-    transition.slideDownOut,
-    options: { duration: 1500 }
-});*/
-
-var width = $(window).width()
-
 /*
-
-$('.test').velocity({
-    width: 0
+$('.exoplanet-one').velocity({
+    translateY: 0,
 }, {
     delay: 500,
     duration: 1500
 })
 
-*/
-
-/*
-
-$('.test').velocity({
-    translateX: 100,
-    width: 0
+$('h1').velocity({
+    translateX: 0
 }, {
     delay: 500,
     duration: 1500
 })
 
+$('h3').velocity({
+    translateX: 0
+}, {
+    delay: 500,
+    duration: 1500
+})
+
+$('p').velocity({
+    translateX: 0
+}, {
+    delay: 500,
+    duration: 1500
+})
 */
 
 /*

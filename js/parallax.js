@@ -10,11 +10,11 @@ $.fn.parallax = function (resistance, mouse) {
 // Hover animations
 
 $(document).mousemove(function (e) {
-    $('.planet').parallax(20, e);
-    $('.grid-parallax').parallax(-150, e);
-    $('.parallax-pos-150').parallax(150, e);
-    $('.parallax-neg-150').parallax(-150, e);
-    $('.flex-40').parallax(-150, e);
-    $('.flex-60').parallax(150, e);
-    $('footer').parallax(0, e);
+    $('.planet').parallax(20, e)
+    $('.grid-parallax').parallax(-150, e)
+    $('.parallax-pos-150').parallax(150, e)
+    $('.parallax-neg-150').parallax(-150, e)
+    $('.flex-40').parallax(-150, e)
+    $('.flex-60').parallax(150, e)
+    $('footer').parallax(0, e)
 })
