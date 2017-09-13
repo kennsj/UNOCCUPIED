@@ -9,21 +9,25 @@ $UO-red: #EB4B48;
 
 html
     background-color: #14161E
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
     /* background: radial-gradient(ellipse at center, rgb(41, 137, 216) 0%, rgb(20, 22, 30) 51%, rgb(20, 22, 30) 100%); */
 
 body
-    height: 400vh
-    width: 120vw
+    width: 100vw
     /* background-image: radial-gradient(circle, rgb(255, 255, 255) 2px, rgba(44, 44, 44, 0) 1px); */
     overflow-x: hidden
 
 header
+    position: relative
     width: 100vw
     height: 100vh
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+    z-index: 20
 
     nav
         position: fixed
@@ -70,14 +74,6 @@ header
         background: url(../img/header-bg.png) no-repeat
         background-size: cover
 
-
-        h1
-            font-family: 'Ropa Sans'
-            font-weight: 900
-            font-size: 7rem
-            text-align: center
-            color: white
-
 .fov
     width: 100vw
     height: 100vh
@@ -101,21 +97,7 @@ header
     top: -20vh
     padding: 0 15vw
     background-size: 10vw 20vh
-    background-image: radial-gradient(circle, rgba(255, 255, 255, .3) 2px, rgba(44, 44, 44, 0) 1px)
-
-.space-navigation
-    display: flex
-    width: 100vw
-    justify-content: center
-    position: absolute
-    z-index: 5
-
-    .line
-        margin: 0 auto
-        width: 1px
-        background-color: white
-        height: 300vh
-        opacity: .2
+    background-image: radial-gradient(circle, rgba(255, 255, 255, .1) 2px, rgba(44, 44, 44, 0) 1px)
 
 .planet
     position: absolute
@@ -141,78 +123,80 @@ header
     100%
         transform: translateY(0) rotate(180deg)
 
-h2
-    font-family: 'Ropa Sans'
-    font-size: 3rem
-    text-align: center
-    margin-bottom: 5rem
-
 section
     position: absolute
+    height: 100vh
     width: 100vw
 
-    article
+    .article
         display: flex
         flex-wrap: wrap
-        flex-direction: row
+        flex-direction: column
 
-        h1
-            font-family: 'Ropa Sans'
-            font-size: 50px
-            transform: translateX(100vw)
-            transition: 1.5s
-
-        h2
-            font-family: 'Ropa Sans'
-            font-size: 25px
-
-        h3
-            font-family: 'Ropa Sans'
-            font-size: 16px
-            font-weight: 100
-            color: $UO-red
-            transform: translateX(100vw)
-            transition: 1.5s
-
-        p
-            font-family: 'Open Sans'
-            font-size: 18px
-            line-height: 32px
-            font-weight: 100
-            margin-bottom: 40px
-            padding: 0 5vw
-            transform: translateX(100vw)
-            transition: 1.5s
-
-        p:first-of-type
-            padding-top: 50px
-
-        .flex-60
-            flex-basis: 60%
-            height: 100vh
-
-        .wide
-            padding: 10% 5vw
-
-        .flex-40
-            flex-basis: 40%
-            height: 100vh
-            padding: 10% 50px
-
-        .exoplanet-one
+        .articleOne
             width: 100%
             height: 100%
-            background: url(../img/exoplanet01.jpg) no-repeat
-            background-size: cover
-            transform: translateX(-100vw)
-            transition: 1.5s
 
-        .melting-planet
-            width: 100%
-            height: 100%
-            background: url(../img/melting-planet.jpg) no-repeat
-            background-size: cover
-            background-position: top
+            .intro-text
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                width: 100%
+                height: 40vh
+
+                h1
+                    width: 100%
+                    margin-top: 170px
+                    font-family: 'Didot'
+                    font-size: 50px
+                    font-weight: 100
+                    text-align: center
+                    opacity: 0
+                    // transform: translateX(150px)
+
+                h2
+                    width: 100%
+                    margin-top: 10px
+                    font-family: 'Quattrocento'
+                    font-size: 35px
+                    font-weight: 400
+                    text-align: center
+                    opacity: 0
+
+                h3
+                    display: block
+                    width: 100%
+                    margin-top: 20px
+                    font-family: 'Quattrocento Sans'
+                    font-size: 24px
+                    font-weight: 100
+                    text-align: center
+                    letter-spacing: 2px
+                    opacity: 0
+
+                .divider
+                    position: absolute
+                    top: 45vh
+                    height: 3px
+                    width: 100px
+                    margin: 20px auto 0 auto
+                    background: $UO-red
+                    opacity: 0
+
+            .img01
+                position: absolute
+                //left: -25vw
+                top: 50vh
+                right: -50vw
+                width: 100vw
+                height: 70vh
+                margin-top: 100px auto 0 auto
+                background: url(../img/img01-circle.png) no-repeat
+                background-size: contain
+                background-position: left
+                z-index: -1
+                opacity: 0
 
     .timeline-window
         height: auto
@@ -273,6 +257,7 @@ section
             width: 90%
             height: 200px
 
+audio
 
 footer
     position: fixed
@@ -320,7 +305,7 @@ footer
     margin-left: -2500px
     animation: spin 160s linear infinite
     background-size: 240px
-    opacity: .2
+    opacity: .1
     z-index: 10
     pointer-events: none
     background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MCAyNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0MCAyNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxyZWN0IHg9IjEwNiIgeT0iOTAiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB4PSI3NCIgeT0iNjMiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIyMyIgeT0iNjYiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI1MCIgeT0iMTEwIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNjMiIHk9IjEyOCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjQ1IiB5PSIxNDkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI5MiIgeT0iMTUxIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNTgiIHk9IjgiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNDciIHk9IjMzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iOTEiIHk9IjQzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTY5IiB5PSIyOSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE4MiIgeT0iMTkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNjEiIHk9IjU5IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTM4IiB5PSI5NSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE5OSIgeT0iNzEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiLz48cmVjdCB4PSIyMTMiIHk9IjE1MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjIiIGhlaWdodD0iMiIvPjxyZWN0IHg9IjEyOCIgeT0iMTYzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMjA1IiB5PSIxNzQiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNTIiIHk9IjIwMCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjUyIiB5PSIyMTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB5PSIxOTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxMTAiIHk9IjE4NCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjwvc3ZnPg==);

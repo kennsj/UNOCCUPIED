@@ -11,7 +11,8 @@ $.fn.parallax = function (resistance, mouse) {
 
 $(document).mousemove(function (e) {
     $('.planet').parallax(20, e)
-    $('.grid-parallax').parallax(-150, e)
+    $('.grid-parallax').parallax(-50, e)
+    $('.parallax-pos-50').parallax(50, e)
     $('.parallax-pos-150').parallax(150, e)
     $('.parallax-neg-150').parallax(-150, e)
     $('.flex-40').parallax(-150, e)
