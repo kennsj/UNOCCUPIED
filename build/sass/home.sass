@@ -1,139 +1,656 @@
-$uo-red: #EB4B48;
-$white: #FFFFFF
+$uo-red: #E13D3D
+$uo-blue: #03070E
+$uo-font: #FBFBFB
+$white: rgba(255,255,255,.3)
 
 *
     box-sizing: border-box
     margin: 0
     padding: 0
+    color: white
+    // outline: 1px solid rgba(255,255,255,.1)
 
 html
-    background-color: #1a1a1a
+    width: 100%
+    background-color: $uo-blue
+
+/*********** OVERLAYS ************/
+
+// Color overlay
+
+.color-overlay
+    position: fixed
     width: 100vw
-    // overflow-y: hidden
-    overflow: hidden
-
-body
-
-section
-    position: relative
-    display: flex
-    flex-direction: row
     height: 100vh
+    background: radial-gradient(ellipse at bottom, rgb(41, 137, 216) -40%, rgb(20, 22, 30) 65%, rgb(20, 22, 30) 100%)
+    user-select: none
+    pointer-events: none
+    z-index: 2
+    opacity: .05
 
-    article
-        position: relative
-        display: flex
-        justify-content: flex-end
+// Logo
+
+.uo-logo
+    position: absolute
+    z-index: 2
+    top: 5.7vh
+    left: calc(50vw - (40px / 2))
+    height: 100px
+    width: 150px
+    background: url(../img/logo_symbol_text.png) no-repeat
+    background-size: 70%
+    transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+
+// Borders
+
+.border-wrapper
+
+    .border-top-left
+        position: absolute
+        top: 72px
+        left: 97.5px
+        height: 1px
+        width: calc(40vw - 50px)
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+    .border-top-right
+        position: absolute
+        top: 72px
+        right: calc(97.5px + (75px / 2) + 50px)
+        height: 1px
+        width: calc(40vw - (75px/ 2) - 97.5px)
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+    .border-right-top
+        position: absolute
+        top: calc(72px + (75px / 2) + 50px)
+        right: 96.5px
+        width: 1px
+        height: 15vh
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+    .border-right-bottom
+        position: absolute
+        right: 96.5px
+        bottom: 66px
+        width: 1px
+        height: 25vh
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+    .border-bottom
+        position: absolute
+        left: 97.5px
+        bottom: 66px
+        width: calc(100vw - (96.5px * 2) - 2px)
+        height: 1px
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+    .border-left
+        position: absolute
+        left: 96.5px
+        top: 72px
+        width: 1px
+        height: calc(100vh - 66px - 72px)
+        background: rgba(255,255,255,.2)
+        z-index: 1000
+
+// Scroll down icon
+
+.scroll-down
+    position: absolute
+    z-index: 100
+    left: calc(50vw - 25px)
+    bottom: 5vh
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 50px
+    height: 50px
+    border: 1px solid $uo-red
+    background-size: 200%
+    background-position: 100% 200%
+    background-image: linear-gradient(to top, $uo-red 50%, rgba(255,255,255, 0) 0%)
+    transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+    transform: rotate(45deg)
+    &::after
+        content: ''
+        transform: rotate(45deg)
+
+    &:hover
+        position: absolute
+        z-index: 1000
+        cursor: pointer
+        border-color: $uo-red
+        background-image: linear-gradient(to top, $uo-red 51%, transparent 50%)
+        background-position: 0 100%
+        transition: 1s
+
+    .arrow-one
+        position: absolute
+        margin-left: 2px
+        margin-top: 2px
+        width: 8px
+        height: 8px
+        border-left: 1px solid white
+        border-top: 1px solid white
+        transform: rotate(180deg)
+
+    .arrow-two
+        position: absolute
+        margin-left: -2px
+        margin-top: -2px
+        width: 8px
+        height: 8px
+        border-left: 1px solid white
+        border-top: 1px solid white
+        transform: rotate(180deg)
+
+// Open navigation styling
+
+.open-navigation
+    position: absolute
+    // transform: translateY(-120vh)
+    display: flex
+    flex-direction: column
+    width: 100vw
+    height: 100vh
+    z-index: 999
+    background-color: rgba(0,0,0,.9)
+    transition: 1s cubic-bezier(.13,.71,.45,.84)
+    overflow: hidden
+    transform: translateX(-100vw)
+    transition: 1.5s cubic-bezier(.13,.71,.45,.84)
+
+    .open-navigation-left
+        width: 50%
         height: 100vh
-        width: 33.3vw
-        cursor: pointer
-        z-index: 1
-        transition: .9s cubic-bezier(.51,.92,.24,1.15)
-        //&:hover
-            //width: 50vw
-            //transition: .7s linear
-            //box-shadow: inset 0 0 0 2000px rgba(255,255,255,.2)
+        overflow-y: scroll
+        overflow-x: hidden
 
-        .text-field
-            position: absolute
-            left: 150px
-            bottom: 0
+        .h1-nav
+            font-size: 30px
+            line-height: 40px
+
+        .nav-divider
+            width: 100px
+            height: 2px
+            margin: -10px 0 15px 0
+            background: $uo-red
+
+        .nav-overlay
+            padding: 50px 0 0 100px
             width: 100%
-            transition: .9s
-
-            h1
-                font-family: serif
-                font-size: 50px
-                font-weight: 700
-                color: $white
-                text-shadow: 0 2px 4px black
-                transition: .2s
-
-            .divider
-                width: 100px
-                height: 3px
-                background-color: $uo-red
-                margin: 20px 0 25px 0
-
-            h3
-                font-family: sans-serif
-                font-size: 14px
-                font-weight: 700
-                color: $white
-                text-shadow: 0 2px 4px black
-
-            .date-text
-                font-size: 14px
-                font-weight: 100
-
-            p
-                font-family: sans-serif
-                font-size: 18px
-                font-weight: 100
-                color: $white
-                text-shadow: 0 2px 4px black
-                margin: 20px 0 15vh 0
-
-            a
-                height: 100%
-                width: 100%
-                color: white
-                text-decoration: none
-                text-align: left
-                cursor: default
-                &:hover
-                    cursor: default
-
-        .text-field-lift
-            bottom: 150px
-            // transition: .9s cubic-bezier(.51,.92,.24,1.15)
+            height: 100%
+            background: linear-gradient(to top, rgba(125,185,232,0) 0%,rgba(3,7,14,0.7) 100%)
 
 
-    .full-width
-        // position: absolute
-        width: 100vw
+        .article-one
+            width: 100%
+            height: 40vh
+            background: url(../img/img01.png) no-repeat
+            background-size: cover
+            background-position: center
 
-    .half-width
-        width: 50vw
+        .article-two
+            width: 100%
+            height: 40vh
+            background: url(../img/exoplanet-scenery.jpg) no-repeat
+            background-size: cover
+            background-position: center
 
-    .third-width
+        .article-three
+            width: 100%
+            height: 40vh
+            background: url(../img/img03-home.png) no-repeat
+            background-size: cover
+            background-position: center
+
+        button
+            position: relative
+            width: 200px
+            height: 50px
+            margin-top: 50px
+            font-family: 'Proxima Nova Condensed Regular'
+            color: $uo-font
+            letter-spacing: 2px
+            text-transform: uppercase
+            background-color: transparent
+            border: 1px solid $uo-red
+            background-size: 200%
+            background-position: 200% 0
+            background-image: linear-gradient(to top, $uo-red 50%, transparent -50%)
+            transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+            &:hover
+                cursor: pointer
+                border-color: $uo-red
+                background-image: linear-gradient(to top, $uo-red 51%, transparent 50%)
+                background-position: 0 100%
+                transition: 1s
+            &:active
+                border: 1px solid $uo-red
+            &:focus
+                border: 1px solid $uo-red
+
+
+    .nav-footer
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        position: absolute
+        right: 0
+        width: 50%
+        height: 100vh
+        background-color: $uo-blue
+
+        .search
+
+        .divider
+            width: 130px
+            height: 4px
+            margin: 10px 0 40px
+            background-color: $uo-red
+
+        a
+            font-family: 'Proxima Nova Condensed Regular'
+            font-size: 30px
+            text-decoration: none
+            text-transform: uppercase
+            line-height: 60px
+            color: $uo-font
+            transition: .3s cubic-bezier(.13,.71,.45,.84)
+            &:hover
+                color: $uo-red
+                transition: .3s cubic-bezier(.13,.71,.45,.84)
+
+    .nav-first-row
+        position: relative
         width: 33.3vw
+        height: 100vh
+        background-color: $uo-blue
+        opacity: .2
 
-    .fifth-width
-        width: 20vw
+    .nav-second-row
+        position: relative
+        width: 33.3vw
+        height: 110vh
+        background-color: #1a1a1a
+        opacity: .2
 
-    .hide
-        width: 0
-        opacity: 0
-        transition: 1s cubic-bezier(.51,.92,.24,1.15)
+    .nav-third-row
+        position: relative
+        width: 33.4vw
+        height: 120vh
+        background-color: $uo-red
+        opacity: .2
 
-    .hidden
-        opacity: 0
-        transition: 1s cubic-bezier(.51,.92,.24,1.15)
+.toggle-nav
+    transform: translateX(0)
+    transition: 1.5s cubic-bezier(.13,.71,.45,.84)
 
-    .close-article
-        position: fixed
-        top: 50px
-        right: 50px
-        width: 40px
-        height: 40px
-        border: 1px solid white
-        border-radius: 50%
-        z-index: 5
-        transition: 1s cubic-bezier(.51,.92,.24,1.15)
+
+// Hamburger icon
+
+nav
+
+    .hamburger
+        display: flex
+        position: absolute
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        left: calc(5vw - ( 75px / 2))
+        top: calc(5vw - ( 75px / 2))
+        // top: calc(50vh + (75px / 2))
+        width: 75px
+        height: 75px
+        border: 1px solid $uo-red
+        z-index: 99999
         cursor: pointer
+        background-size: 200%
+        background-position: 100% 199%
+        transform: rotate(180deg)
+        background-image: linear-gradient(to top, $uo-red 50%, transparent -50%)
+        transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+        &:hover
+            cursor: pointer
+            border-color: $uo-red
+            background-image: linear-gradient(to top, $uo-red 51%, transparent 50%)
+            background-position: 0 100%
+            transition: 1s
 
-    .article-one
-        background: url(../img/exoplanet-scenery.jpg) no-repeat
-        background-position: left
-        background-size: auto
+        // &:hover > .hamburger-line
+            //transform: rotate(-45deg)
+            //transition: .7s
 
-    .article-two
-        background: url(../img/planet-moon.jpg) no-repeat
-        background-position: left
-        background-size: auto
+        .hamburger-line
+            cursor: pointer
+            margin: 2.5px
+            width: 25px
+            height: 1px
+            transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+            background-color: white
 
-    .article-three
-        background: url(../img/mars.jpg) no-repeat
-        background-position: left
-        background-size: auto
+// Right side menu
+
+.menu-right
+    position: absolute
+    right: 0
+    width: 5vw
+    height: 100vh
+    z-index: 999
+    background-color: $uo-font
+
+// Grid background
+
+.grid
+	position: absolute
+	height: 100vh
+	width: 100vw
+	top: 1.65vh
+	padding: 0 15vw
+	background-size: 10vw 12.15vh
+    z-index: 10
+	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, rgba(44, 44, 44, 0) 1px)
+
+// Section and article styling
+
+#fullpage
+
+    .section
+
+        article
+            position: absolute
+            left: 5vw
+            top: 72px
+            display: flex
+            flex-direction: row
+            width: 90vw
+            height: 85vh
+            // background-color: rgba(255,255,255,.2)
+            @media screen and (max-width: 1320px)
+                width: 90vw
+
+            //background-color: white
+
+            .container-left
+                display: flex
+                flex-direction: column
+                width: 50%
+                height: 100%
+                padding: 100px 0 0 10vw
+
+            .container-right
+                display: flex
+                flex-direction: column
+                width: 50%
+                height: 100%
+                padding: 100px 160px 0 90px
+
+            .intro-container
+                padding-top: 190px
+
+.container-social
+    display: flex
+
+    .divider
+        width: 130px
+        height: 4px
+        margin: 0 30px 30px 0
+        background-color: $uo-red
+
+    .social-border
+        display: flex
+        align-items: center
+        justify-content: center
+        display: inline-block
+        width: 25px
+        height: 25px
+        border: 1px solid $uo-red
+        margin: -10px 30px 0 5px
+        cursor: pointer
+        transform: rotate(45deg)
+        background-size: 200%
+        background-image: linear-gradient(to top, $uo-red 50%, transparent 50%)
+        transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+        &:hover
+            color: $uo-red
+            border-color: #A72424
+            background-image: linear-gradient(to top, $uo-red 51%, transparent 50%)
+            background-position: 0 100%
+            transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
+            // &:hover
+                background-color: $uo-red
+                transition: .7s
+
+        .fb-icon
+            position: absolute
+            left: 10px
+            bottom: 2px
+            width: 100%
+            height: 100%
+            background: url(../img/fb-icon.png) no-repeat
+            background-size: 30%
+            transform: rotate(-45deg)
+
+        .twitter-icon
+            position: absolute
+            left: 8.5px
+            bottom: -.5px
+            width: 100%
+            height: 100%
+            background: url(../img/twitter-icon.png) no-repeat
+            background-size: 60%
+            transform: rotate(-45deg)
+
+        .google-icon
+            position: absolute
+            left: 8px
+            bottom: -1px
+            width: 100%
+            height: 100%
+            background: url(../img/google-icon.png) no-repeat
+            background-size: 70%
+            transform: rotate(-45deg)
+
+.credit-list
+    position: absolute
+    bottom: 0
+    display: flex
+    height: 100px
+
+    .credit-person
+        margin-right: 50px
+
+.exoplanet-kepler186 img
+    position: absolute
+    margin-left: -200px
+    left: 0
+    top: -200px
+    z-index: -1
+    transform: rotate(-90deg)
+    animation: planetMove 20s linear infinite
+
+    @keyframes planetMove
+        0%
+            transform: translateX(0) translateY(0)
+        50%
+            transform: translateY(20px) translateY(5px)
+        100%
+            transform: translateX(0) translateY(0)
+
+// Typopgrahic styling
+
+// 1 – Headline H1 article
+
+h1, .h1-article
+    font-family: 'Voga Bold'
+    font-size: 4.5vw
+    font-weight: 100
+    line-height: 5vw
+    letter-spacing: 5px
+    color: $uo-font
+    margin-bottom: 30px
+
+// 2 – Headline H1 home
+h1, .h1-home
+    font-family: 'Voga Bold'
+    font-size: 45px
+    line-height: 50px
+    letter-spacing: 1px
+    color: $uo-font
+
+// 3 – Headline H2 home
+h2
+    font-family: 'Proxima Nova Condensed Regular'
+    font-size: 16px
+    letter-spacing: 2px
+    color: $uo-font
+    line-height: 30px
+
+// 4 – Headline H3
+h3, .h3-headline
+    font-size: 22px
+    font-family: 'Trump Gothic West'
+    text-transform: uppercase
+    text-align: left
+    line-height: 26px
+    letter-spacing: 2px
+    margin: 30px 0
+    color: $uo-font
+
+// 5 – Headline H3 red
+h3, .h3-red
+    font-size: 22px
+    font-family: 'Trump Gothic West'
+    text-transform: uppercase
+    text-align: left
+    line-height: 26px
+    letter-spacing: 2px
+    color: $uo-red
+
+// 6 – Headline H4
+
+h4, .h4-headline
+    font-family: 'Trump Gothic West'
+    font-size: 18px
+    text-transform: uppercase
+    letter-spacing: 5px
+    line-height: 45px
+    color: $uo-red
+
+// 7 – Headline H5
+h5
+    font-size: 18px
+    font-family: 'Proxima Nova Condensed Regular'
+    line-height: 17px
+    letter-spacing: 1.5px
+    color: $uo-font
+
+// 8 – Headline H6
+h6
+    font-family: 'Proxima Nova Condensed Regular'
+    font-size: 16px
+    line-height: 19px
+    color: $uo-font
+
+// 9 – Body parapgraph
+p, .body-p
+    font-family: 'Proxima Nova Condensed Regular'
+    font-size: 18px
+    font-weight: 100
+    line-height: 32px
+    letter-spacing: 1px
+    color: $uo-font
+
+// 10 – Body paragraph quote
+p, .p-quote
+    font-family: 'Proxima Nova Condensed Regular'
+    font-size: 18px
+    font-weight: 100
+    line-height: 36px
+    letter-spacing: 1px
+    color: $uo-red
+    margin-top: 18px
+
+// Section images
+
+.img01
+    position: absolute
+    left: -2vw
+    width: 110vw
+    height: 110vh
+    z-index: 10000
+    background: url(../img/img01.png) no-repeat
+    background-size: cover
+    background-position: center
+
+.img02
+    position: absolute
+    left: -2vw
+    width: 110vw
+    height: 110vh
+    z-index: 10000
+    background: url(../img/img02.png) no-repeat
+    background-size: cover
+    background-position: center
+
+.img03
+    position: absolute
+    left: -2vw
+    width: 110vw
+    height: 110vh
+    z-index: 10000
+    background: url(../img/img03.png) no-repeat
+    background-size: cover
+    background-position: center
+
+.img04
+    position: absolute
+    left: -2vw
+    width: 110vw
+    height: 110vh
+    z-index: 10000
+    background: url(../img/img04.png) no-repeat
+    background-size: cover
+    background-position: center
+
+.img05
+    position: absolute
+    left: -2vw
+    width: 110vw
+    height: 110vh
+    z-index: 10000
+    background: url(../img/img05.png) no-repeat
+    background-size: cover
+    background-position: center
+
+// Stars animation
+
+.stars-animation
+    position: fixed
+    width: 200vw
+    height: 200vw
+    top: -50%
+    left: -50%
+    //margin-top: -2500px
+    //margin-left: -2500px
+    animation: spin 2660s cubic-bezier(0.16, 0.68, 0.43, 0.99) infinite
+    background-size: 240px
+    opacity: .3
+    z-index: 2000
+    pointer-events: none
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MCAyNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0MCAyNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxyZWN0IHg9IjEwNiIgeT0iOTAiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB4PSI3NCIgeT0iNjMiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIyMyIgeT0iNjYiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI1MCIgeT0iMTEwIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNjMiIHk9IjEyOCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjQ1IiB5PSIxNDkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI5MiIgeT0iMTUxIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNTgiIHk9IjgiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNDciIHk9IjMzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iOTEiIHk9IjQzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTY5IiB5PSIyOSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE4MiIgeT0iMTkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNjEiIHk9IjU5IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTM4IiB5PSI5NSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE5OSIgeT0iNzEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiLz48cmVjdCB4PSIyMTMiIHk9IjE1MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjIiIGhlaWdodD0iMiIvPjxyZWN0IHg9IjEyOCIgeT0iMTYzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMjA1IiB5PSIxNzQiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNTIiIHk9IjIwMCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjUyIiB5PSIyMTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB5PSIxOTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxMTAiIHk9IjE4NCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjwvc3ZnPg==)
+
+@keyframes spin
+    from
+        transform: translateY(0) rotate(0deg)
+        transform: rotateZ(0deg)
+    to
+        transform: translateY(1500px) rotate(180deg)
+        transform: rotateZ(360deg)

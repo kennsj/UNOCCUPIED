@@ -1,61 +1,332 @@
 doctype html
-html(lang="en")
+html(lang='en')
 	head
 		title= UNOCCUPIED
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
-		link(rel="icon" href="")
-		link(rel="stylesheet" href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Quattrocento:400,700' )
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100")
-		link(rel="stylesheet" href="css/main.css")
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1')
+		link(rel='icon' href='img/logo_symbol.png')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Quattrocento:400,700' )
+		link(rel='stylesheet' href='css/jquery.fullpage.css')
+		link(rel='stylesheet' href='css/fonts.css')
+		link(rel='stylesheet' href='css/home.css')
 		
 	body
-		header
-			nav
-				//a
-					//img(src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="go-back")
-				ul
-					each item in ['01', '02', '03', '04', '05']
-						li.hover-sound-beep= item
+	
+		div.open-navigation.nav-active
+			div.open-navigation-left
+				div.article-one
+					div.nav-overlay
+						h1.h1-nav Exoplanets: <br> A new chapter for mankind?
+						div.nav-divider
+						h2 Exoplanets may contain alien life, but might also be the future for mankind. <br> Trump will save us.
 						
-			div.header-image
-				div.header-titles
-					h1.parallax-pos-150.clickLink #[a(href="#section") Exoplanets]
-					// h2.parallax-pos-150 Where life might be lurking #[br] in the galaxy	
-			//div.planet
-					
-		div.bg-stars-animation
-		div.fov
-		div.grid.grid-parallax
+						button Read more
+						
+				div.article-two
+					div.nav-overlay
+						h1.h1-nav Extraterrestrial life: <br> Is it out there? Annichen knows the answer
+						div.nav-divider
+						h2 Exoplanets may contain alien life, but might also be the future for mankind. <br> Who would believe such a thing?
+						
+						button Read more
+						
+						
+						
+				div.article-three
+					div.nav-overlay
+						h1.h1-nav Volcanic planet: <br> How it contains life. Beyond Andreas' imagination
+						div.nav-divider
+						h2 Exoplanets may contain alien life, but might also be the future for mankind. <br> I truely believe so.
+						
+						button Read more
+				
+			div.nav-footer
+				
+			
+				h1.h1-article Get in touch
+				div.divider
+				a(href='#') Facebook
+				a(href='#') Twitter
+				a(href='#') LinkedIn
+				a(href='#') contact@unoccupied.net
+				
+			
+			// div.nav-first-row
+			// div.nav-second-row
+			// div.nav-third-row
+			
+		div.scroll-down
+			div.arrow-one
+			div.arrow-two
+			
+			
+		// Borders
+		// div.border-wrapper
+			//div.border-top-left
+			//div.border-top-right
+			// div.border-right-top
+			// div.border-right-bottom
+			//div.border-bottom
+			//div.border-left
+			
+		div.stars-animation
+		div.color-overlay
+		div.uo-logo
+		div.grid
 		
-		div.side-navigation
-				
-		section
-			article#articleOne
-				div.intro-text.parallax-pos-150
-					h1 Exoplanets:
-					h2 A new chapter for mankind?
-					h3 Exoplanets may contain alien lifeform, but might also <br> be in the future for us
-					div.divider
+		
+		
+		nav
+			div.hamburger
+				div.hamburger-line
+				div.hamburger-line
+				div.hamburger-line
+		
+		div#fullpage
+		
+			// SECTION ONE
+			div.section.section-one
+			
+				div.menu-right
 					
-				div.img01.parallax-neg-150
+				article
 				
+					div.container-left.intro-container
+						div.container-header
+							h1.h1-article What is <br>an exoplanet?
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+						
+						h4.h4-headline Published
+						h5 12 / 10 / 16
+					
+						div.container-credit
+							div.credit-list
+								div.credit-person
+									h4 Journalist
+									h5 Anish Wonders
+								div.credit-person
+									h4 Designer
+									h5 Robin AI & Kenneth J 
+								div.credit-person
+									h4 Developer
+									h5 Kenneth J & Robin AI
+							
+					
+					div.container-right.intro-container
+						h3.h3-red Introduction
+						p.body-p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
+						p.body-p With so many other stars out there, they began searching the neighborhoods around those stars for planets like Earth. Could there be an Earth-like planet orbiting some other star with all the perfect conditions to support life? Maybe!
+						p.body-p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
+			
+			// SECTION TWO
+			div.section.section-two.img01
+			
+					
+			// SECTION THREE
+			div.section.section-three
+			
+				div.menu-right
+			
+				article
+					div.container-left
+						div.container-header
+							h1.h1-article What do we know <br>about them?
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+									
+						// p.body-p Scientists have learned that other solar systems share similarities with our own solar system. For example, they've learned that exoplanets can orbit their stars at different distances. Some exoplanets are so close to their stars that they have surface temperatures that could melt iron.
+						// p.body-p Other exoplanets might orbit at just the right distance that they fall in their star's habitable zone, which is the zone in which an exoplanet would enjoy temperatures that would permit liquid water to exist at its surface. The existence of liquid water at the surface is one of the key factors scientists believe would permit life to form.
+						// p.body-p Scientists have learned that other solar systems share similarities with our own solar system. For example, they've learned that exoplanets can orbit their stars at different distances.
+
 
 					
-				//p When astronomers discovered the other planets in our solar system, it was only natural to be curious about whether or not any of those other planets hosted any form of life.
-				// p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
-				
+					div.container-right
+						p.body-p Scientists have learned that other solar systems share similarities with our own solar system. For example, they've learned that exoplanets can orbit their stars at different distances. Some exoplanets are so close to their stars that they have surface temperatures that could melt iron.
+						p.body-p Other exoplanets might orbit at just the right distance that they fall in their star's habitable zone, which is the zone in which an exoplanet would enjoy temperatures that would permit liquid water to exist at its surface. The existence of liquid water at the surface is one of the key factors scientists believe would permit life to form.
 
+			// SECTION FOUR
+			div.section.section-four.img02			
+
+			// SECTION FIVE
+			div.section.section-five
+			
+				div.menu-right
+				
+				article
+					div.container-left
+						div.container-header
+							h1.h1-article How many of them <br>are there?
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+								
+					div.container-right
+						p.body-p Exoplanets are now a dime a dozen. Before 1995 it was unknown whether or not other main sequence stars even hosted their own planets, but now we know that, statistically, almost every star in the galaxy is likely to have at least one planet, and many even have multiple.
+						p.body-p Thanks to missions like Kepler we now have 3400 confirmed exoplanets and another 5400 waiting to be officially added to the list. Many of these are gas giants like Jupiter and Saturn, some are Neptune like and covered in ice, but there are a few that are rocky like our home.
+
+			// SECITON SIX
+			div.section.section-six.img03
+			
+			// SECTION SEVEN
+			div.section.section-seven
+			
+				div.menu-right
+				
+				article
+					div.container-left
+						div.container-header
+							h1.h1-article Any habitable <br>exoplanets?
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+								
+						p.body-p Of the 3400 confirmed exoplanets, there are only around 15 that fall into the category of ‘habitable’ and out of those 15, there are five that SETI astronomer Jeff Coughlin thinks are the most interesting.
+						p.body-p Coughlin talked to us about his guidelines for what’s really considered “habitable” and what’s not. A lot of what makes a planet habitable falls into a few categories: its size, its distance from its host star, and exactly what kind of star it orbits around. What we think of as a habitable world isn’t always the same marker for scientists.
+
+								
+					div.container-right
+						p.body-p “When the everyday person hears the word habitable they probably think something like Earth or (a place) humans could walk out of a spaceship and be happy: there’s water, an atmosphere, gravity wouldn’t be too high, the temperature wouldn’t be too hot or too cold,” Coughlin explains. “But when astronomers talk about habitable worlds we’re really just asking about two things: could there be liquid water on what is a mostly rocky surface, nothing like Jupiter where you have a huge atmosphere crushing you down-those are really the two terms that astronomers think about. When we say a planet is habitable, that’s all we really mean.”
+						p.body-p Let’s take a tour through the four most habitable exoplanets that we know of so far.
+
+			// SECTION EIGHT
+			div.section.section-eight.img04			
+			
+			// SECTION NINE
+			div.section.section-nine
+				div.slide
+					div.menu-right
+					
+					article
+						div.container-left.exoplanet-kepler186
+							img(src='img/01-kepler186f-2.png')
+												
+						div.container-right
+							div.container-header
+								h3.h3-headline Habitable exoplanets:
+								h1.h1-article Kepler 186-F
+							
+							div.container-social
+								div.divider
+								div.social-border
+									div.fb-icon
+								div.social-border
+									div.twitter-icon
+								div.social-border
+									div.google-icon
+							
+							h4.h4-habitable 490 LIGHT-YEARS AWAY FROM EARTH
+							p.body-p Kepler-186f (also known by its Kepler Object of Interest designation KOI-571.05) is an exoplanet orbiting the red dwarf Kepler-186.
+							
+							h4.h4-habitable Features
+							p.body-p The first truly Earth-size exoplanet found in its host stars habitable zone. <br> Kepler-186f is 10% bigger than our own planet and is almost certainly rocky.	
+				
+				div.slide
+					h1 Hello
+				
+				div.slide
+				div.slide
+				
+			// SECTION TEN
+			div.section.section-eleven
+			
+				div.menu-right
+				
+				article
+					div.container-left
+						div.container-header
+							h1.h1-article What's next for <br>exoplanets?
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+								
+						p.body-p Planets like -452b and -62f are the closest analogs to Earth, orbiting more Sun-like stars at a distance we’re more familiar with. The hunt for more Earth-like planets is ongoing, but the super earth’s are actually pretty hard to find because they orbit their star at a similar length of time that we do. Waiting a few years to to see if there's a dip in the light in front of the star is pretty challenging.
+								
+					div.container-right
+						p.body-p “The Kepler mission had to stare at the same patch of sky for over four years to find planets like Earth,” Coughlin says. “The big planets close to their star around small stars are the easiest to find.”
+						p.body-p Luckily, new exoplanet announcements have become the regular for astronomers. And there are upcoming missions focused solely on searching for more exoplanets. TESS  is the Transiting Exoplanet Survey Satellite planned to launch in 2018 and CHaracterising ExOPlanets Satellite (CHEOPS)  also launching in 2018. Jeff Coughlin thinks we’ll know sometime in the next twenty to thirty years about the atmospheric conditions around some of these planets because after a few more generations of advanced telescopes the technology will be there to detect water vapor and other chemical signatures. The most important thing they’ll be looking for is what keeps us alive. “If we find oxygen around another planet it will be really exciting because the only thing on Earth that produces oxygen is life.”
+
+			// SECTION ELEVEN
+			div.section.section-twelve.img05
+			
+			// SECTION TWELVE
+			div.section.section-thirteen
+			
+				div.menu-right
+			
+				article
+				
+					div.container-left
+						div.container-credit
+							div.credit-list
+								div.credit-person
+									h4 Journalist
+									h5 Anish Wonders
+								div.credit-person
+									h4 Designer
+									h5 Robin AI & Kenneth J 
+								div.credit-person
+									h4 Developer
+									h5 Kenneth J & Robin AI
+
+					
+					div.container-right
+						div.container-header
+							h1.h1-article Related articles
+						
+						div.container-social
+							div.divider
+							div.social-border
+								div.fb-icon
+							div.social-border
+								div.twitter-icon
+							div.social-border
+								div.google-icon
+								
+						p.body-p Planets like -452b and -62f are the closest analogs to Earth, orbiting more Sun-like stars at a distance we’re more familiar with. The hunt for more Earth-like planets is ongoing, but the super earth’s are actually pretty hard to find because they orbit their star at a similar length of time that we do. Waiting a few years to to see if there's a dip in the light in front of the star is pretty challenging.
+								
 		
-		footer
-			h4.logo Unoccupied magazine
-			div.audio-icon.hover-sound-beep
 			
 		audio(src="sound/beep.mp3")#beep-sound
-		// audio(src="sound/ambient-bg.mp3" autoplay loop).ambient-bg
-		
-		script(type="text/javascript" src="js/jquery-latest.min.js")
-		script(type="text/javascript" src="js/TweenMax.js")
-		script(type="text/javascript" src="js/velocity.js")
-		script(type="text/javascript" src="js/parallax.js")
-		script(type="text/javascript" src="js/main.js")
+		audio(src="sound/ambient-bg.mp3" autoplay loop).ambient-bg
+				
+		script(src='js/jquery-latest.min.js')
+		script(src='js/jquery.fullpage.extensions.min.js')
+		script(src='js/jquery.fullpage.js')
+		script(src='js/TweenMax.js')
+		script(src='js/velocity.js')
+		script(src='js/velocity.ui.js')
+		script(src='js/parallax.js')
+		script(src='js/main.js')

@@ -1,0 +1,40 @@
+/** Voga **/
+
+@font-face {
+    font-family: 'Voga Bold';
+    src: url('../fonts/Voga Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Voga Medium';
+    src: url('../fonts/Voga Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Voga Regular';
+    src: url('../fonts/Voga Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** Trump Gothic **/
+
+@font-face {
+    font-family: 'Trump Gothic West';
+    src: url('../fonts/trump_gothic_west.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** Proxima Nova **/
+
+@font-face {
+    font-family: 'Proxima Nova Condensed Regular';
+    src: url('../fonts/Proxima Nova Condensed Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}

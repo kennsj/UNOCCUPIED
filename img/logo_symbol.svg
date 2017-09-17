@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>planet</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Default-layout" transform="translate(-946.000000, -77.000000)" stroke="#FFFFFF">
+            <g id="Frame-With-Logo" transform="translate(86.000000, 71.000000)">
+                <g id="planet" transform="translate(873.500000, 19.000000) rotate(-45.000000) translate(-873.500000, -19.000000) translate(857.000000, 10.000000)">
+                    <path d="M16.5,18 C21.3243697,18 25.2352941,13.9705627 25.2352941,9 C25.2352941,4.02943725 21.3243697,0 16.5,0 C11.6756303,0 7.76470588,4.02943725 7.76470588,9 C7.76470588,13.9705627 11.6756303,18 16.5,18 Z" id="Oval-1" stroke-width="1.25"></path>
+                    <path d="M8.13066172,11.5859802 C9.20905034,15.2961293 12.5480508,18 16.5,18 C20.4519492,18 23.7909497,15.2961293 24.8693383,11.5859802 C29.7353136,11.0642486 33,10.1014432 33,9 C33,7.89855676 29.7353136,6.93575139 24.8693383,6.41401981 C23.7909497,2.70387075 20.4519492,0 16.5,0 C12.5480508,0 9.20905034,2.70387075 8.13066172,6.41401981 C3.26468638,6.93575139 0,7.89855676 0,9 C0,10.1014432 3.26468638,11.0642486 8.13066172,11.5859802 Z" id="Oval-1" stroke-width="1.5"></path>
+                    <path d="M33,12 C33,10.3431458 25.6126984,9 16.5,9 C7.38730163,9 0,10.3431458 0,12" id="Oval-2" stroke-width="1.5" transform="translate(16.500000, 10.500000) scale(1, -1) translate(-16.500000, -10.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

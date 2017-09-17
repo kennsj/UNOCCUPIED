@@ -25,7 +25,7 @@ gulp.task('browser-sync', ['sass', 'jade'], () => {
 });
 
 gulp.task('jade', () => {
-	var glob = (multipage) ? '/*.jade' : '/index.jade', 'news.jade';
+	var glob = (multipage) ? '/*.jade' : '/index.jade';
 
 	return gulp.src(paths.jade + glob)
 		.pipe(jade())

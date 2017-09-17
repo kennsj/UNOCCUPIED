@@ -7,7 +7,7 @@ $.fn.parallax = function (resistance, mouse) {
 
 };
 
-// Hover animations
+// Hover parallax - home
 
 $(document).mousemove(function (e) {
     $('.planet').parallax(20, e)
@@ -18,4 +18,14 @@ $(document).mousemove(function (e) {
     $('.flex-40').parallax(-150, e)
     $('.flex-60').parallax(150, e)
     $('footer').parallax(0, e)
+})
+
+// Hover parallax - article
+
+$(document).mousemove(function (e) {
+    $('h1').parallax(200, e)
+    $('p').parallax(-200, e)
+    $('.grid').parallax(50, e)
+    $('.img01, .img02, .img03, .img04, .img05').parallax(150, e)
+    $('.exoplanet-kepler186 img').parallax(200, e)
 })
