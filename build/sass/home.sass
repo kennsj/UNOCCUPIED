@@ -103,7 +103,7 @@ html
 
 .scroll-down
     position: absolute
-    z-index: 100
+    z-index: 10000
     left: calc(50vw - 25px)
     bottom: 5vh
     display: flex
@@ -159,11 +159,12 @@ html
     flex-direction: column
     width: 100vw
     height: 100vh
-    z-index: 999
-    background-color: rgba(0,0,0,.9)
+    z-index: 500
+    background-color: rgba(0,0,0, 0)
     transition: 1s cubic-bezier(.13,.71,.45,.84)
     overflow: hidden
-    transform: translateX(-100vw)
+    opacity: 0
+    // transform: translateY(-100vw)
     transition: 1.5s cubic-bezier(.13,.71,.45,.84)
 
     .open-navigation-left
@@ -195,6 +196,8 @@ html
             background: url(../img/img01.png) no-repeat
             background-size: cover
             background-position: center
+            opacity: 0
+            transform: perspective3(-150px) rotateX(45deg)
 
         .article-two
             width: 100%
@@ -202,6 +205,8 @@ html
             background: url(../img/exoplanet-scenery.jpg) no-repeat
             background-size: cover
             background-position: center
+            opacity: 0
+            transform: perspective3(-100px) rotateX(45deg)
 
         .article-three
             width: 100%
@@ -209,6 +214,8 @@ html
             background: url(../img/img03-home.png) no-repeat
             background-size: cover
             background-position: center
+            opacity: 0
+            transform: perspective3(-50px) rotateX(45deg)
 
         button
             position: relative
@@ -246,9 +253,13 @@ html
         right: 0
         width: 50%
         height: 100vh
-        background-color: $uo-blue
+        opacity: 0
+        background-color: $uo-font
 
         .search
+
+        h1
+            color: $uo-red
 
         .divider
             width: 130px
@@ -262,11 +273,11 @@ html
             text-decoration: none
             text-transform: uppercase
             line-height: 60px
-            color: $uo-font
-            transition: .3s cubic-bezier(.13,.71,.45,.84)
+            color: $uo-red
+            transition: .9s cubic-bezier(.13,.71,.45,.84)
             &:hover
-                color: $uo-red
-                transition: .3s cubic-bezier(.13,.71,.45,.84)
+                transition: .9s cubic-bezier(.13,.71,.45,.84)
+                text-decoration: line-through
 
     .nav-first-row
         position: relative
@@ -290,7 +301,9 @@ html
         opacity: .2
 
 .toggle-nav
-    transform: translateX(0)
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)
     transition: 1.5s cubic-bezier(.13,.71,.45,.84)
 
 
@@ -304,16 +317,15 @@ nav
         justify-content: center
         align-items: center
         flex-direction: column
-        left: calc(5vw - ( 75px / 2))
+        right: calc(5vw - ( 160px / 2))
         top: calc(5vw - ( 75px / 2))
-        // top: calc(50vh + (75px / 2))
-        width: 75px
-        height: 75px
+        width: 60px
+        height: 60px
         border: 1px solid $uo-red
         z-index: 99999
         cursor: pointer
         background-size: 200%
-        background-position: 100% 199%
+        background-position: 100% 200%
         transform: rotate(180deg)
         background-image: linear-gradient(to top, $uo-red 50%, transparent -50%)
         transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
@@ -324,6 +336,10 @@ nav
             background-position: 0 100%
             transition: 1s
 
+        &:hover .hamburger-line
+            transition: 1s cubic-bezier(.13,.71,.45,.84)
+            background-color: $uo-font
+
         // &:hover > .hamburger-line
             //transform: rotate(-45deg)
             //transition: .7s
@@ -333,8 +349,8 @@ nav
             margin: 2.5px
             width: 25px
             height: 1px
-            transition: background-position 1s, color 1s cubic-bezier(.13,.71,.45,.84), border-color 1s cubic-bezier(.13,.71,.45,.84)
-            background-color: white
+            transition: 1s cubic-bezier(.13,.71,.45,.84)
+            background-color: $uo-red
 
 // Right side menu
 
@@ -343,7 +359,7 @@ nav
     right: 0
     width: 5vw
     height: 100vh
-    z-index: 999
+    z-index: 100
     background-color: $uo-font
 
 // Grid background
@@ -580,55 +596,58 @@ p, .p-quote
 
 // Section images
 
-.img01
+.imgOne img
     position: absolute
-    left: -2vw
-    width: 110vw
-    height: 110vh
-    z-index: 10000
-    background: url(../img/img01.png) no-repeat
-    background-size: cover
-    background-position: center
+    left: 0
+    top: 0
+    width: 1960px
+    transform-origin: 50% 50%
+    animation: planetZoom 50s linear infinite
 
-.img02
-    position: absolute
-    left: -2vw
-    width: 110vw
-    height: 110vh
-    z-index: 10000
-    background: url(../img/img02.png) no-repeat
-    background-size: cover
-    background-position: center
+.imgTwo img
+	position: absolute
+	top: 0
+	right: 0
+	margin: auto
+	width: 1960px
+    transform-origin: 50% 50%
+    animation: planetZoom 50s linear infinite
 
-.img03
+.imgThree img
     position: absolute
-    left: -2vw
-    width: 110vw
-    height: 110vh
-    z-index: 10000
-    background: url(../img/img03.png) no-repeat
-    background-size: cover
-    background-position: center
+    top: 0
+    right: 0
+    margin: auto
+    width: 1960px
+    transform-origin: 50% 50%
+    animation: planetZoom 50s linear infinite
 
-.img04
-    position: absolute
-    left: -2vw
-    width: 110vw
-    height: 110vh
-    z-index: 10000
-    background: url(../img/img04.png) no-repeat
-    background-size: cover
-    background-position: center
+.imgFour img
+	position: absolute
+	top: 0
+	right: 0
+	margin: auto
+	width: 2000px
+    transform-origin: 50% 50%
+    animation: planetZoom 50s linear infinite
 
-.img05
-    position: absolute
-    left: -2vw
-    width: 110vw
-    height: 110vh
-    z-index: 10000
-    background: url(../img/img05.png) no-repeat
-    background-size: cover
-    background-position: center
+.imgFive .img
+	position: absolute
+	top: 0
+	right: 0
+	margin: auto
+	width: 1960px
+	height: auto
+    transform-origin: 50% 50%
+    animation: planetZoom 50s linear infinite
+
+@keyframes planetZoom
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.2)
+    100%
+        transform: scale(1)
 
 // Stars animation
 
@@ -654,3 +673,6 @@ p, .p-quote
     to
         transform: translateY(1500px) rotate(180deg)
         transform: rotateZ(360deg)
+
+audio
+    display none

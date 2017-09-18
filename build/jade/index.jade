@@ -8,6 +8,8 @@ html(lang='en')
 		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Quattrocento:400,700' )
 		link(rel='stylesheet' href='css/jquery.fullpage.css')
 		link(rel='stylesheet' href='css/fonts.css')
+		link(rel='stylesheet' href='css/normalize.css')
+		link(rel='stylesheet' href='css/planetRotation.css')
 		link(rel='stylesheet' href='css/home.css')
 		
 	body
@@ -127,7 +129,8 @@ html(lang='en')
 						p.body-p Astronomers call these planets that orbit other stars exoplanets, which is short for extrasolar planets. To date, scientists have found exoplanets in a wide variety of sizes. Some are much larger than Jupiter, while others are much smaller than Earth.
 			
 			// SECTION TWO
-			div.section.section-two.img01
+			div.section.section-two.imgOne.img-parallax
+				img(src='img/img01.png')
 			
 					
 			// SECTION THREE
@@ -160,7 +163,8 @@ html(lang='en')
 						p.body-p Other exoplanets might orbit at just the right distance that they fall in their star's habitable zone, which is the zone in which an exoplanet would enjoy temperatures that would permit liquid water to exist at its surface. The existence of liquid water at the surface is one of the key factors scientists believe would permit life to form.
 
 			// SECTION FOUR
-			div.section.section-four.img02			
+			div.section.section-four.imgTwo.img-parallax
+				img(src='img/img02.png')
 
 			// SECTION FIVE
 			div.section.section-five
@@ -186,7 +190,8 @@ html(lang='en')
 						p.body-p Thanks to missions like Kepler we now have 3400 confirmed exoplanets and another 5400 waiting to be officially added to the list. Many of these are gas giants like Jupiter and Saturn, some are Neptune like and covered in ice, but there are a few that are rocky like our home.
 
 			// SECITON SIX
-			div.section.section-six.img03
+			div.section.section-six.imgThree.img-parallax
+				img(src='img/img03.png')
 			
 			// SECTION SEVEN
 			div.section.section-seven
@@ -216,7 +221,8 @@ html(lang='en')
 						p.body-p Let’s take a tour through the four most habitable exoplanets that we know of so far.
 
 			// SECTION EIGHT
-			div.section.section-eight.img04			
+			div.section.section-eight.imgFour.img-parallax
+				img(src='img/img04.png')
 			
 			// SECTION NINE
 			div.section.section-nine
@@ -225,7 +231,9 @@ html(lang='en')
 					
 					article
 						div.container-left.exoplanet-kepler186
-							img(src='img/01-kepler186f-2.png')
+							div.container
+								div.planet-image
+							// img(src='img/01-kepler186f-2.png')
 												
 						div.container-right
 							div.container-header
@@ -279,7 +287,8 @@ html(lang='en')
 						p.body-p Luckily, new exoplanet announcements have become the regular for astronomers. And there are upcoming missions focused solely on searching for more exoplanets. TESS  is the Transiting Exoplanet Survey Satellite planned to launch in 2018 and CHaracterising ExOPlanets Satellite (CHEOPS)  also launching in 2018. Jeff Coughlin thinks we’ll know sometime in the next twenty to thirty years about the atmospheric conditions around some of these planets because after a few more generations of advanced telescopes the technology will be there to detect water vapor and other chemical signatures. The most important thing they’ll be looking for is what keeps us alive. “If we find oxygen around another planet it will be really exciting because the only thing on Earth that produces oxygen is life.”
 
 			// SECTION ELEVEN
-			div.section.section-twelve.img05
+			div.section.section-twelve.imgFive.img-parallax
+				img(src='img/img05.png')
 			
 			// SECTION TWELVE
 			div.section.section-thirteen
@@ -301,7 +310,6 @@ html(lang='en')
 									h4 Developer
 									h5 Kenneth J & Robin AI
 
-					
 					div.container-right
 						div.container-header
 							h1.h1-article Related articles
@@ -320,11 +328,11 @@ html(lang='en')
 		
 			
 		audio(src="sound/beep.mp3")#beep-sound
-		audio(src="sound/ambient-bg.mp3" autoplay loop).ambient-bg
+		// audio(src="sound/ambient-bg.mp3" autoplay loop).ambient-bg
 				
 		script(src='js/jquery-latest.min.js')
 		script(src='js/jquery.fullpage.extensions.min.js')
-		script(src='js/jquery.fullpage.js')
+		// script(src='js/jquery.fullpage.js')
 		script(src='js/TweenMax.js')
 		script(src='js/velocity.js')
 		script(src='js/velocity.ui.js')

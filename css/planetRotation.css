@@ -1,0 +1,76 @@
+/* PLANET 1 */
+
+.planet-image {
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  z-index: 1000;
+}
+
+@-webkit-keyframes planet-rotation {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+@keyframes planet-rotation {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+
+.container {
+    padding: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet-image {
+     width: 35vw;
+     height: 35vw;
+     max-width: 512px;
+     max-height: 512px;
+     border-radius: 50%;
+     position: relative;
+     background: transparent url('https://www.solarsystemscope.com/Images/textures/textures-full/2k_makemake_fictional.jpg') repeat-x;
+     background-size: cover;
+     -webkit-animation: planet-rotation 40s linear infinite;
+}
+
+.planet-image:after {
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    height: 100%;
+    border-radius: 50%;
+    background-image:
+        -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.6), transparent),
+        linear-gradient(to right, rgba(255,240,220,0.5) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.64) 60%, rgba(0,0,0,1) 100%);
+    box-shadow: inset 10px 0 30px rgba(255,240,220,0.4);
+}
+
+.planet-image:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: url('http://rojo2.com/img/texture-01-clouds.png') repeat-x;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    -webkit-animation: planet-rotation 120s linear infinite;
+}
+
+
+/* PLANET 2 */

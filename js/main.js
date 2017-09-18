@@ -1,8 +1,122 @@
 // Toggle hamburger icon
+var count = 0
+
 document.querySelector('.hamburger').addEventListener('click', function(){
-    $('.open-navigation').toggleClass('toggle-nav')
+    // $('.open-navigation').toggleClass('toggle-nav')
+
+    if ( ++count % 2 === 1 ) {
+
+        $('.menu-right').velocity({
+            width: '100vw',
+        }, {
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+        $('.scroll-down').velocity({
+            opacity: 0
+        }, {
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+        $('.open-navigation').velocity({
+            opacity: 1,
+            display: 'flex'
+        }, {
+            delay: 0,
+            duration: 1800,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+        $('.nav-footer').velocity({
+            opacity: 1,
+        }, {
+            delay: 450,
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+
+        $('.article-one').velocity({
+            opacity: 1,
+            perspective3: 0
+        }, {
+            delay: 900,
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+        $('.article-two').velocity({
+            opacity: 1,
+            perspective3: 0
+        }, {
+            delay: 1350,
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+        $('.article-three').velocity({
+            opacity: 1,
+            perspective3: 0
+        }, {
+            delay: 1800,
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+
+    } else {
+        $('.menu-right').velocity({
+            width: '5vw',
+        }, {
+            delay: 400,
+            duration: 900,
+            easing: [0.16, 0.68, 0.43, 0.99],
+        })
+        $('.scroll-down')
+            .velocity('stop')
+            .velocity('reverse')
+        $('.open-navigation')
+            .velocity('stop')
+            .velocity('reverse')
+        $('.nav-footer')
+            .velocity('stop')
+            .velocity('reverse')
+        $('.article-one')
+            .velocity('stop')
+            .velocity('reverse')
+        $('.article-two')
+            .velocity('stop')
+            .velocity('reverse')
+        $('.article-three')
+            .velocity('stop')
+            .velocity('reverse')
+    }
 });
 
+
+/* if ($('.imgOne, .imgTwo, .imgThree, .imgFour, .imgFive')).hasClass('active'){
+    console.log('hi')
+} */
+
+if ( $('.imgOne, .imgTwo, imgThree, imgFour, .imgFive').hasClass( "active" ) ) {
+
+    console.log('hi')
+
+}
+
+/*
+var counter = 0;
+function makeTransparent($target) {
+  $target.eq(counter).animate({opacity: 0}, function(){
+    counter++;
+    if (counter < $target.length) {
+      makeTransparent($target);
+    }
+  });
+} */
+
+// $('.fn.fullpage').setAllowScrolling(false);
 
 // Print out current section which is viewed
 var totalSections = $('.section')
@@ -18,12 +132,16 @@ $('.scroll-down').click(function(){
 
 // Fullpage scroll
 $(document).ready(function() {
+
+
+
 	$('#fullpage').fullpage({
 
 		navigation: true,
         scrollOverflow: false,
         slidesNavigation: true,
 		slidesNavPosition: 'bottom',
+        slideSelector: '.slide',
 
 		afterRender: function() {
 			$('#fullpage .section:not(:first)').fadeOut(700);
@@ -142,4 +260,4 @@ $(document).on('mouseover', '#fp-nav li a', function(e) {
      $(this).find('li a').css('background-color', 'blue')
 });
 
-document.querySelector('.ambient-bg').volume = .2
+document.querySelector('.ambient-bg').volume = .1
