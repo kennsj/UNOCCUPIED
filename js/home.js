@@ -27,7 +27,7 @@ function mouseclickFunc() {
 	}
 	//$(this).find('.text-field').css('text-align', 'left')
 	$(this).find('.text-field').velocity({
-
+		opacity: 0
 	}, {
 		duration: 700,
 		delay: 500
@@ -47,8 +47,8 @@ $(document).ready(function () {
 		$('.empty, .article-html').velocity({
 			translateY: '-100vh'
 		}, {
-			duration: 700,
-			easing: 'ease'
+			duration: 900,
+			easing: ['0.51, 0.92, 0.24, 1.15']
 		})
 	})
 })
